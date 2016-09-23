@@ -1,4 +1,5 @@
 cmake_minimum_required (VERSION 2.8)
+enable_testing()
 
 project (minimd)
 add_definitions("-std=c99")

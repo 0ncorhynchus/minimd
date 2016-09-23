@@ -2,6 +2,12 @@
 #include "memory.h"
 #include "container.h"
 
+void get_coordiante(Container* container, size_t i, float* vector) {
+    for (size_t idx = 0; idx < 3; ++idx) {
+        vector[idx] = container->coordinates[3*i + idx];
+    }
+}
+
 void set_coordinate(Container* container, size_t i,
         float x, float y, float z) {
     container->coordinates[3*i + 0] = x;
@@ -18,6 +24,7 @@ Container* alloc_cont(const int num_beads) {
 }
 
 void dealloc_cont(Container* container) {
+    if (container == NULL) return;
     free(container->velocities);
     free(container->coordinates);
     free(container->mass);

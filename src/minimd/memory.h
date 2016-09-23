@@ -3,8 +3,8 @@
 
 #include <stdlib.h>
 
-static inline float* alloc_float(const int n) {
-    float* heap = (float*)malloc(sizeof(float) * n);
+static inline float* alloc_float(const size_t n) {
+    float* heap = (float*)calloc(n, sizeof(float));
     if (heap == NULL)
         exit(1); // TODO Error Message
     return heap;

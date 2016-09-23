@@ -5,7 +5,7 @@ size_t num_beads(Box* box) {
     return box->container->num_beads;
 }
 
-inline float length(float* vector) {
+static inline float length(float* vector) {
     return sqrt(
             pow(vector[0], 2.0) +
             pow(vector[1], 2.0) +
@@ -16,8 +16,8 @@ inline float length(float* vector) {
 void get_direction(Box* box, size_t i, size_t j,
         float* vector) {
     for (int idx = 0; idx < 3; ++idx) {
-        vector[idx] = box->container->coordinates[j + idx]
-            - box->container->coordinates[i + idx];
+        vector[idx] = box->container->coordinates[3*j + idx]
+            - box->container->coordinates[3*i + idx];
     }
 }
 

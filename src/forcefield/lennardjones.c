@@ -11,7 +11,7 @@ float calc_lj_energy(Box* box) {
     const float sigma = 1.0;
     const float epsilon = 1.0;
     float energy = 0.0;
-    for (size_t i = 1; i < box->container.num_beads; ++i)
+    for (size_t i = 1; i < num_beads(box); ++i)
         for (size_t j = 0; j < i; ++j) {
             energy += calc_unit_energy(epsilon, sigma,
                     get_length(box, i, j));

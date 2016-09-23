@@ -8,7 +8,9 @@ typedef struct Container {
     float* velocities;
 } Container;
 
-void alloc_cont(const int num_beads, Container* container);
+void set_coordinate(Container* container, size_t i,
+        float x, float y, float z);
+Container* alloc_cont(const int num_beads);
 void dealloc_cont(Container* container);
 
 #endif /* __MINIMD_CONTAINER_H */

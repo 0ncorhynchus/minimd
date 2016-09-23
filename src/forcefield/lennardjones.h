@@ -4,6 +4,8 @@
 #include "../minimd/forcefield.h"
 
 float calc_lj_energy(Box* box);
-ForceField lennardjones = { calc_lj_energy };
+ForceField lennardjones = {
+    /* calc_energy = */ calc_lj_energy
+};
 
 #endif

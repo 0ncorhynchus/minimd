@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-inline float* alloc_float(const int n) {
+static inline float* alloc_float(const int n) {
     float* heap = (float*)malloc(sizeof(float) * n);
     if (heap == NULL)
         exit(1); // TODO Error Message

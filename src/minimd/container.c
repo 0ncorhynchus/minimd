@@ -2,7 +2,7 @@
 #include "memory.h"
 #include "container.h"
 
-void get_coordiante(Container* container, size_t i, float* vector) {
+void get_coordinate(Container* container, size_t i, float* vector) {
     for (size_t idx = 0; idx < 3; ++idx) {
         vector[idx] = container->coordinates[3*i + idx];
     }

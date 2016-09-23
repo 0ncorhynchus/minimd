@@ -18,7 +18,7 @@ void test_get_coordinate() {
     Container* cont = alloc_cont(size);
     float vec[3];
     for (size_t i = 0; i < size; ++i) {
-        get_coordiante(cont, i, vec);
+        get_coordinate(cont, i, vec);
         CU_ASSERT_EQUAL(vec[0], 0.0);
         CU_ASSERT_EQUAL(vec[1], 0.0);
         CU_ASSERT_EQUAL(vec[2], 0.0);
@@ -30,7 +30,7 @@ void test_set_coordinate() {
     Container* cont = alloc_cont(3);
     set_coordinate(cont, 1, 10.0, 2.0, 5.0);
     float vec[3];
-    get_coordiante(cont, 1, vec);
+    get_coordinate(cont, 1, vec);
     CU_ASSERT_EQUAL(vec[0], 10.0);
     CU_ASSERT_EQUAL(vec[1],  2.0);
     CU_ASSERT_EQUAL(vec[2],  5.0);

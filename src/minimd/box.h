@@ -1,7 +1,6 @@
 #ifndef __MINIMD_BOX_H
 #define __MINIMD_BOX_H
 
-#include <stddef.h> // size_t
 #include "container.h"
 
 typedef struct Box {

@@ -1,7 +1,7 @@
 #ifndef __MINIMD_LENNARDJONES_H
 #define __MINIMD_LENNARDJONES_H
 
-#include "../minimd/forcefield.h"
+#include <minimd/forcefield.h>
 
 float calc_lj_energy(Box* box);
 ForceField lennardjones = {

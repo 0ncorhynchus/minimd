@@ -8,6 +8,7 @@ inline float calc_unit_energy(
 }
 
 float calc_lj_energy(Box* box) {
+    // TODO !!! DEPRECATED CODING STYLE !!!
     const float sigma = 1.0;
     const float epsilon = 1.0;
     float energy = 0.0;

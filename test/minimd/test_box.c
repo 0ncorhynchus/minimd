@@ -6,36 +6,36 @@
 
 void test_alloc() {
     Container* container = alloc_cont(3);
-    Box box = { container };
+    Box* box = alloc_normal_box(container);
     dealloc_cont(container);
 }
 
 void test_num_beads() {
     Container* container = alloc_cont(3);
-    Box box = { container };
-    CU_ASSERT_EQUAL(num_beads(&box), 3);
+    Box* box = alloc_normal_box(container);
+    CU_ASSERT_EQUAL(num_beads(box), 3);
     dealloc_cont(container);
 }
 
 void test_get_direction() {
     Container* container = alloc_cont(3);
-    Box box = { container };
+    Box* box = alloc_normal_box(container);
     set_coordinate(container, 0, 3.0, 0.0, 0.0);
     set_coordinate(container, 1, 0.0, 0.0, 1.0);
     set_coordinate(container, 2, 0.0, 2.0, 0.0);
     float vec[3];
 
-    get_direction(&box, 0, 1, vec);
+    get_direction(box, 0, 1, vec);
     CU_ASSERT_EQUAL(vec[0], -3.0);
     CU_ASSERT_EQUAL(vec[1], 0.0);
     CU_ASSERT_EQUAL(vec[2], 1.0);
 
-    get_direction(&box, 1, 2, vec);
+    get_direction(box, 1, 2, vec);
     CU_ASSERT_EQUAL(vec[0], 0.0);
     CU_ASSERT_EQUAL(vec[1], 2.0);
     CU_ASSERT_EQUAL(vec[2], -1.0);
 
-    get_direction(&box, 2, 0, vec);
+    get_direction(box, 2, 0, vec);
     CU_ASSERT_EQUAL(vec[0], 3.0);
     CU_ASSERT_EQUAL(vec[1], -2.0);
     CU_ASSERT_EQUAL(vec[2], 0.0);
@@ -45,14 +45,14 @@ void test_get_direction() {
 
 void test_get_length() {
     Container* container = alloc_cont(3);
-    Box box = { container };
+    Box* box = alloc_normal_box(container);
     set_coordinate(container, 0, 3.0, 0.0, 0.0);
     set_coordinate(container, 1, 0.0, 0.0, 1.0);
     set_coordinate(container, 2, 0.0, 2.0, 0.0);
 
-    CU_ASSERT_EQUAL(get_length(&box, 0, 1), sqrt(10.0));
-    CU_ASSERT_EQUAL(get_length(&box, 1, 2), sqrt(5.0));
-    CU_ASSERT_EQUAL(get_length(&box, 2, 0), sqrt(13.0));
+    CU_ASSERT_EQUAL(get_length(box, 0, 1), sqrt(10.0));
+    CU_ASSERT_EQUAL(get_length(box, 1, 2), sqrt(5.0));
+    CU_ASSERT_EQUAL(get_length(box, 2, 0), sqrt(13.0));
 
     dealloc_cont(container);
 }

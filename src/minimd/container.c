@@ -21,6 +21,7 @@ Container* alloc_cont(const int num_beads) {
     container->mass = alloc_float(num_beads);
     container->coordinates = alloc_float(3*num_beads);
     container->velocities = alloc_float(3*num_beads);
+    return container;
 }
 
 void dealloc_cont(Container* container) {

@@ -20,4 +20,4 @@ before_script:
 script:
   - cmake -DCMAKE_INCLUDE_PATH=$TRAVIS_BUILD_DIR/include -DCMAKE_LIBRARY_PATH=$TRAVIS_BUILD_DIR/lib ..
   - make
-  - make test
+  - ctest --verbose

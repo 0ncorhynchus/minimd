@@ -5,9 +5,9 @@ compiler:
   - clang
 
 before_install:
-  - wget http://downloads.sourceforge.net/projects/cunit/CUnit/2.1-3/CUnit-2.1-3-src.tar.bz2
-  - tar -xvjpf CUnit-2.1-3-src.tar.bz2
-  - cd CUnit-2.1-3
+  - wget http://downloads.sourceforge.net/project/cunit/CUnit/2.1-2/CUnit-2.1-2-src.tar.bz2
+  - tar -xvjpf CUnit-2.1-2-src.tar.bz2
+  - cd CUnit-2.1-2
   - ./configure --prefix=$TRAVIS_BUILD_DIR
   - make
   - make install

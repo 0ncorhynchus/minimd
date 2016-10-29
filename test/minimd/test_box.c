@@ -61,9 +61,9 @@ int main() {
     CU_initialize_registry();
     CU_pSuite suite = CU_add_suite("Box", NULL, NULL);
 
-    /* CU_add_test(suite, "test alloc", test_alloc); */
-    /* CU_add_test(suite, "test num_beads", test_alloc); */
-    /* CU_add_test(suite, "test get_direction", test_get_direction); */
+    CU_add_test(suite, "test alloc", test_alloc);
+    CU_add_test(suite, "test num_beads", test_alloc);
+    CU_add_test(suite, "test get_direction", test_get_direction);
 
     CU_basic_run_suite(suite);
     int exit_code = CU_get_number_of_failures() == 0 ? 0 : 1;
